@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+	<br>
+	<label>
+	    Name:
+	    <input type="text" formControlName="name" placeholder="XYZ">
+	</label>
+	<br>
+	<label>
+		Email ID:
+	    <input type="text" formControlName="email" placeholder="xyz@email.com">
+	</label>
+	<br>
+	<label>
+		Feedback:
+		<label>
+		     <input type="radio" value="Great" formControlName="feedback" [checked]='true'>
+		       <span>Great</span>
+		</label>
+		<label>
+		     <input type="radio" value="Okay" formControlName="feedback">
+		       <span>Okay</span>
+		</label>
+		<label>
+		     <input type="radio" value="Not good" formControlName="feedback">
+		       <span>Not good</span>
+		</label>
+
+	</label>
+	<br>
+	<label>
+		Comments:
+	    <input type="text" formControlName="comments" placeholder="(Write comments here...)">
+	</label>
+	<br>
+	<br>
+	Value: {{ form.value | json }}
+	<br>
+	<br>
+	<button type="submit" [disabled]="!form.valid">Submit</button>
+	
+</form>
